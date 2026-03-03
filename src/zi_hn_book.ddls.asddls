@@ -1,27 +1,26 @@
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Booking BO view'
 
 define view entity ZI_HN_BOOK
-  as select from zrap_hnbook_1234 as Booking
+  as select from zdemo_hn_book
 
-  association to parent ZI_HN_TRAVEL      as _Travel     on  $projection.TravelUUID = _Travel.TravelUUID
-
-  association [1..1] to /DMO/I_Customer   as _Customer   on  $projection.CustomerID = _Customer.CustomerID
-  association [1..1] to /DMO/I_Carrier    as _Carrier    on  $projection.CarrierID = _Carrier.AirlineID
-  association [1..1] to /DMO/I_Connection as _Connection on  $projection.CarrierID    = _Connection.AirlineID
-                                                         and $projection.ConnectionID = _Connection.ConnectionID
-  association [1..1] to /DMO/I_Flight     as _Flight     on  $projection.CarrierID    = _Flight.AirlineID
-                                                         and $projection.ConnectionID = _Flight.ConnectionID
+  association to parent ZI_HN_TRAVEL      as _Travel     on  $projection.TravelUuid = _Travel.TravelUuid
+  association [1..1] to /DMO/I_Customer   as _Customer   on  $projection.CustomerId = _Customer.CustomerID
+  association [1..1] to /DMO/I_Carrier    as _Carrier    on  $projection.CarrierId = _Carrier.AirlineID
+  association [1..1] to /DMO/I_Connection as _Connection on  $projection.CarrierId    = _Connection.AirlineID
+                                                         and $projection.ConnectionId = _Connection.ConnectionID
+  association [1..1] to /DMO/I_Flight     as _Flight     on  $projection.CarrierId    = _Flight.AirlineID
+                                                         and $projection.ConnectionId = _Flight.ConnectionID
                                                          and $projection.FlightDate   = _Flight.FlightDate
   association [0..1] to I_Currency        as _Currency   on  $projection.CurrencyCode = _Currency.Currency
 {
-  key booking_uuid          as BookingUUID,
-      travel_uuid           as TravelUUID,
-      booking_id            as BookingID,
+  key booking_uuid          as BookingUuid,
+      travel_uuid           as TravelUuid,
+      booking_id            as BookingId,
       booking_date          as BookingDate,
-      customer_id           as CustomerID,
-      carrier_id            as CarrierID,
-      connection_id         as ConnectionID,
+      customer_id           as CustomerId,
+      carrier_id            as CarrierId,
+      connection_id         as ConnectionId,
       flight_date           as FlightDate,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       flight_price          as FlightPrice,

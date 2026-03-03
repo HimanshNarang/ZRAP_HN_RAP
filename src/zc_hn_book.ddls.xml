@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>ZC_HN_BOOK</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>Booking BO projection</DDTEXT>
+    <DDTEXT>Booking BO Projection View</DDTEXT>
     <SOURCE_TYPE>P</SOURCE_TYPE>
    </DDLS>
   </asx:values>

@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control for ZC_HN_TRAVEL'
+@MappingRole: true
+define role ZC_AC_HN_TRAVEL {
+    grant
+        select
+            on
+                ZC_HN_TRAVEL
+                    where
+                        inheriting conditions from entity ZI_HN_TRAVEL;                        
+}

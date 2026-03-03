@@ -5,7 +5,7 @@
    <DDLS>
     <DDLNAME>ZI_HN_TRAVEL</DDLNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
-    <DDTEXT>CDS view for Travel table</DDTEXT>
+    <DDTEXT>Travel BO view</DDTEXT>
     <SOURCE_TYPE>W</SOURCE_TYPE>
    </DDLS>
   </asx:values>

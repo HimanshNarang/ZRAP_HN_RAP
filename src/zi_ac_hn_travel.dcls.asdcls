@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access Control for ZI_HN_TRAVEL'
+@MappingRole: true
+define role ZI_AC_HN_TRAVEL {
+    grant
+        select
+            on
+                ZI_HN_TRAVEL
+                    where
+                        true;                        
+}
